@@ -11,7 +11,7 @@ export const createBooking = async (req, res) => {
 
         console.log(result)
 
-        return Res.successResponse(res, result)
+        return Res.successResponse(res, result, 201)
     }
     catch (error) {
         return Res.errorResponse(res, error)
@@ -38,7 +38,6 @@ export const updateBooking = async (req, res) => {
         const {
             checkedIn
         } = req.body;
-
 
         const result = await bookingService.updateCheckIn(id, checkedIn);
 
