@@ -22,7 +22,7 @@ export const getBooking = async (req, res) => {
     try {
         const { id } = req.params;
 
-        const result = await bookingService.getBookingsByListingId(id);
+        const result = await bookingService.getBookingsByGuestId(id);
 
         return Res.successResponse(res, result)
     }

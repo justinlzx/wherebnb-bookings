@@ -17,12 +17,12 @@ export const create = async (payload) => {
     }
 }
 
-export const getBookingsByListingId = async (id) => {
+export const getBookingsByGuestId = async (id) => {
     try {
         const result = await AppDataSource.createQueryBuilder()
             .select("booking")
             .from(BookingModel, "booking")
-            .where("booking.listingId = :id", { id })
+            .where("booking.guestId = :id", { id })
             .getMany();
 
         return result;
